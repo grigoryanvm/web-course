@@ -13,5 +13,10 @@ $f=fopen("tel.txt","a");
 fwrite($f,$inf );
 echo "<br>";
 fclose($f);
+$f=fopen('tel.txt',"r");
+
+    $tel=fread($f,1000);
+    fclose($f);
+    echo $tel;
 
 ?>
