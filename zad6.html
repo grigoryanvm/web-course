@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="contact_form" method="post" action="zad6.php" onsubmit="return validate_form ( );">
+    <H1>Заказ мебели</H1>
+    <Select name="subject">
+        <option>Шкаф</option>
+        <option>Стол</option>
+        <option>Сервант</option>
+    </Select>
+    <Select name="material">
+        <option>Дуб</option>
+        <option>Орех</option>
+        <option>Бук</option>
+    </Select>
+    Кол-во:<input type="number" name="count"></input>
+    <input type="submit"></input>
+</form>
+    <script type="text/javascript">
+        <!--
+        
+        function validate_form ( )
+        {
+            valid = true;
+        
+                if ( document.contact_form.count.value == "" )
+                {
+                        alert ( "Пожалуйста заполните поле 'Кол-во'." );
+                        valid = false;
+                }
+        
+                return valid;
+        }
+        
+        </script>
+</body>
+</html>
