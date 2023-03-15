@@ -5,3 +5,9 @@ let da= new Date()
 let d=da.getDate()+"."+(da.getMonth()+1)+"."+da.getFullYear() 
 document.write('<P align=center style= "'+a+'">'+
 naim+'</p><P>Сегодня '+d+'</p>')
+let i=0;
+let imgs=new Array('1.jpg','2.jpg'); //        Добавте свои картинки через запятую
+
+function imgsrc(){
+   let image=document.getElementById("image");
+      image.src=imgs[++i];}
