@@ -12,6 +12,11 @@ let text = new Array('Dog', 'Dog and Cat')
 function imgsrc() {
     var image = document.getElementById('z1');
     let imgs = new Array('1.jpg', '2.jpg'); // 
-     image.src = imgs[++i];
+    image.src = imgs[++i];
     var fieldNameElement = document.getElementById('k');
-    fieldNameElement.innerHTML =text[++j]; }
+    fieldNameElement.innerHTML = text[++j];
+}
+function color() {
+    document.getElementById('k').style="color:red;" 
+
+}
