@@ -20,3 +20,34 @@ function color() {
     document.getElementById('k').style="color:red;" 
 
 }
+////////////////////////////////////////////////////////////////////
+function draw() {
+    let  canvas = document.getElementById('canvas');
+    if (canvas.getContext) {
+      var ctx = canvas.getContext('2d');
+      ctx.save();
+  ctx.beginPath();
+ 
+  // Переносим СК в центр будущего эллипса
+  ctx.translate(25, 30);
+ 
+  /*
+   * Масштабируем по х.
+   * Теперь нарисованная окружность вытянется в a / b раз
+   * и станет эллипсом
+   */
+ 
+  ctx.scale(10 / 30, 1);
+ 
+  // Рисуем окружность, которая благодаря масштабированию станет эллипсом
+  ctx.arc(40, 41, 30, 0, Math.PI * 2, true);
+ 
+  // Восстанавливаем СК и масштаб
+  ctx.restore();
+ 
+  ctx.closePath();
+  ctx.stroke();
+      
+
+    }
+  }
