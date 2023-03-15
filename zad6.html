@@ -1,29 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+ 
+  .container {
+    width: 60%;
+    margin: auto;
+  }
+ 
+  .galery__select {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 0 20px 0;
+  }
+ 
+  .galery__img, .galery__img img {
+    width: 70%;
+    height: 50%;
+  }
+  </style>
 <body>
     <form name="contact_form" method="post" action="zad6.php" onsubmit="return validate_form ( );">
-    <H1>Заказ мебели</H1>
-    <Select name="subject">
-        <option>Шкаф</option>
-        <option>Стол</option>
-        <option>Сервант</option>
-    </Select>
-    <Select name="material">
-        <option>Дуб</option>
-        <option>Орех</option>
-        <option>Бук</option>
-    </Select>
-    Кол-во:<input type="number" name="count"></input>
-    <input type="submit"></input>
-</form>
+        <H1>Заказ мебели</H1>
+        <Select name="subject">
+            <option>Шкаф</option>
+            <option>Стол</option>
+            <option>Сервант</option>
+        </Select>
+        <Select name="material">
+            <option>Дуб</option>
+            <option>Орех</option>
+            <option>Бук</option>
+        </Select>
+        Кол-во:<input type="number" name="count" min="1" max="30"></input>
+        <label style="color: red;" id="Error"></label>
+        <input type="submit"></input>
+    </form>
     <script type="text/javascript">
-        <!--
+        <!-
         
         function validate_form ( )
         {
@@ -31,13 +56,32 @@
         
                 if ( document.contact_form.count.value == "" )
                 {
-                        alert ( "Пожалуйста заполните поле 'Кол-во'." );
+                    document.getElementById("Error").innerHTML= "Пожалуйста заполните поле 'Кол-во'." ;
                         valid = false;
                 }
         
                 return valid;
         }
         
-        </script>
+        
+    </script>
+    <div class="galery__select">
+    <select name="galery">
+       <p> <option value="lusi.jpg">Люцифер</option>
+        <option value="dino.jpg">Дино</option>
+        <option value="malb.jpg">Мальбонте</option>
+    </select>
+</p>
+</div>
+<div class="galery__img">
+<img src="lusi.jpg" alt="Фотография" width="350" height="400"></div>
+
+<script>
+    const img = document.querySelector('.galery__img>img');
+    const select = document.querySelector('.galery__select>select');
+    select.onchange = event => {
+      img.src = select.value;
+    };
+  </script>
 </body>
 </html>
