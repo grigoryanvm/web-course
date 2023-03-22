@@ -8,10 +8,16 @@
     <script src="http://code.jquery.com/jquery-
 latest.js"></script>
 <script>
-    $(document).ready(function () {
-    $("button").click(function () {
+   $(document).ready(function () {
+    /*$("button").click(function () {
     $("p").toggle();
-    });
+    });*/
+    $("#but1").click(function () {
+$("#test").hide();
+});
+$("#but2").click(function () {
+$("#test").show();
+});
     });
     </script>
 </head>
@@ -20,5 +26,8 @@ latest.js"></script>
 <p>This is a paragraph.</p>
 <p>This is another paragraph.</p>
 <button>Click me</button>
+<p id="test">This is another paragraph.</p>
+<button id="but1">Click me</button>
+<button id="but2">Click me for show</button>
 </body>
 </html>
