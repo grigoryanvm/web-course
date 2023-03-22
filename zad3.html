@@ -15,10 +15,18 @@ $(this).hide();
 $("#p1").mouseenter(function () {
 alert("You entered p1!");
 });
+$("input").focus(function () {
+$(this).css("background-color", "#cccccc");
+});
+$("input").blur(function () {
+$(this).css("background-color", "#ffffff");
+});
 });
 </script>
 </head>
 <body>
+    Name: <input type="text" name="fullname"><br>
+Email: <input type="text" name="email">
     <p>If you double-click on me, I will disappear.</p>
 <p>Click me away!</p>
 <p>Click me too!</p>
