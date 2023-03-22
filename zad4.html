@@ -10,23 +10,47 @@
     </script>
     <script>
         $(document).ready(function () {
-            $("button").click(function () {
+            $("#v").click(function () {
                 $("#div1").fadeOut();
                 $("#div2").fadeOut("slow");
                 $("#div3").fadeOut(3000);
             });
+            $("#ok").click(function () {
+                setInterval(function(){
+            $( ".test" ).each( function( index, element ){
+ $( this ).fadeIn(2000).delay(2000*index).fadeOut(2000) ;
+});},2000);
         });
+        $("#stop").click(function () {
+           $(".test").stop();
+    });});
+        
     </script>
 </head>
 
 <body>
     <p>Demonstrate fadeOut() with different
         parameters.</p>
-    <button>Click to fade out boxes</button>
+    <button id="v">Click to fade out boxes</button>
     <br><br>
     <div id="div1" style="width:80px;height:80px;background-color:red;"></div><br>
     <div id="div2" style="width:80px;height:80px;background-color:green;"></div><br>
     <div id="div3" style="width:80px;height:80px;background-color:blue;"></div>
+    <HR>
+    <img class="test" src="photo1679483265 (1).jpeg" width="200" height="200" alt="1">
+    <img class="test" src="photo1679483265.jpeg" width="200" height="200" alt="2">
+    <Style>
+        .test {
+            display: none;
+        }
+    </Style>
+    <button id="ok">Слйд-шоу </button>
+    <button id="stop">Стоп</button>
+    <ul>
+        <li><a href="#">Link 1</a></li>
+        <li><a href="#">Link 2</a></li>
+        <li><a href="#">Link 3</a></li>
+    </ul>
 </body>
 
 </html>
