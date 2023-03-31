@@ -9,4 +9,4 @@ $xml -> writeElement("name", "Марк"); // запись элемента
 $xml -> writeElement("address", "Санкт-Петербург");
 $xml -> endElement(); // закрытие корневого элемента
 echo $xml -> outputMemory(); // завершение записи в XML
-?>
+$xml -> save("xml.txt");
